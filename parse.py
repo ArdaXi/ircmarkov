@@ -20,7 +20,7 @@ for line in f:
 	if ignore.count(nick) > 0:
 		continue
 	msg = match.group(2)
-	words = [x for x in msg.split() if not x.strip(':,<>()@+_*').lower() in nicks and not x.startswith("http")]
+	words = [word for word in msg.split() if not word.strip(':,<>()@+_*').lower() in nicks and not word.startswith("http")]
 	if len(words) < 4:
 		continue
 	for i in range(len(words) - 3):
